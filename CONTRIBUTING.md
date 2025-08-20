@@ -125,7 +125,7 @@ Valorizamos contribuições da comunidade brasileira! Para contribuir:
 
 ## Licença
 
-Copyright © 2024 Confenge Avaliações e Inteligência Artificial LTDA. Todos os direitos reservados.
+Copyright © 2025 Confenge Avaliações e Inteligência Artificial LTDA. Todos os direitos reservados.
 
 ---
 
