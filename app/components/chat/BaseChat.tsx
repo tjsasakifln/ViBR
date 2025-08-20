@@ -7,6 +7,7 @@ import { Workbench } from '~/components/workbench/Workbench.client';
 import { classNames } from '~/utils/classNames';
 import { Messages } from './Messages.client';
 import { SendButton } from './SendButton.client';
+import { useTranslation } from '~/utils/i18n';
 
 import styles from './BaseChat.module.scss';
 
@@ -27,12 +28,13 @@ interface BaseChatProps {
   enhancePrompt?: () => void;
 }
 
-const EXAMPLE_PROMPTS = [
-  { text: 'Build a todo app in React using Tailwind' },
-  { text: 'Build a simple blog using Astro' },
-  { text: 'Create a cookie consent form using Material UI' },
-  { text: 'Make a space invaders game' },
-  { text: 'How do I center a div?' },
+// Prompts de exemplo em português brasileiro
+const EXAMPLE_PROMPTS_PT = [
+  { text: 'Criar um app de lista de tarefas com React e Tailwind' },
+  { text: 'Fazer um blog simples usando Next.js' },
+  { text: 'Criar um sistema de login com validação' },
+  { text: 'Desenvolver uma calculadora interativa' },
+  { text: 'Como fazer um carousel de imagens?' },
 ];
 
 const TEXTAREA_MIN_HEIGHT = 76;
@@ -58,13 +60,14 @@ export const BaseChat = React.forwardRef<HTMLDivElement, BaseChatProps>(
     ref,
   ) => {
     const TEXTAREA_MAX_HEIGHT = chatStarted ? 400 : 200;
+    const { t } = useTranslation();
 
     return (
       <div
         ref={ref}
         className={classNames(
           styles.BaseChat,
-          'relative flex h-full w-full overflow-hidden bg-bolt-elements-background-depth-1',
+          'relative flex h-full w-full overflow-hidden bg-vibr-elements-background-depth-1',
         )}
         data-chat-visible={showChat}
       >
@@ -73,11 +76,11 @@ export const BaseChat = React.forwardRef<HTMLDivElement, BaseChatProps>(
           <div className={classNames(styles.Chat, 'flex flex-col flex-grow min-w-[var(--chat-min-width)] h-full')}>
             {!chatStarted && (
               <div id="intro" className="mt-[26vh] max-w-chat mx-auto">
-                <h1 className="text-5xl text-center font-bold text-bolt-elements-textPrimary mb-2">
-                  Where ideas begin
+                <h1 className="text-5xl text-center font-bold text-vibr-elements-textPrimary mb-2">
+                  {t('app.tagline')}
                 </h1>
-                <p className="mb-4 text-center text-bolt-elements-textSecondary">
-                  Bring ideas to life in seconds or get help on existing projects.
+                <p className="mb-4 text-center text-vibr-elements-textSecondary">
+                  {t('app.description')}
                 </p>
               </div>
             )}
@@ -105,12 +108,12 @@ export const BaseChat = React.forwardRef<HTMLDivElement, BaseChatProps>(
               >
                 <div
                   className={classNames(
-                    'shadow-sm border border-bolt-elements-borderColor bg-bolt-elements-prompt-background backdrop-filter backdrop-blur-[8px] rounded-lg overflow-hidden',
+                    'shadow-sm border border-vibr-elements-borderColor bg-vibr-elements-prompt-background backdrop-filter backdrop-blur-[8px] rounded-lg overflow-hidden',
                   )}
                 >
                   <textarea
                     ref={textareaRef}
-                    className={`w-full pl-4 pt-4 pr-16 focus:outline-none resize-none text-md text-bolt-elements-textPrimary placeholder-bolt-elements-textTertiary bg-transparent`}
+                    className={`w-full pl-4 pt-4 pr-16 focus:outline-none resize-none text-md text-vibr-elements-textPrimary placeholder-vibr-elements-textTertiary bg-transparent`}
                     onKeyDown={(event) => {
                       if (event.key === 'Enter') {
                         if (event.shiftKey) {
@@ -130,7 +133,7 @@ export const BaseChat = React.forwardRef<HTMLDivElement, BaseChatProps>(
                       minHeight: TEXTAREA_MIN_HEIGHT,
                       maxHeight: TEXTAREA_MAX_HEIGHT,
                     }}
-                    placeholder="How can Bolt help you today?"
+                    placeholder={t('chat.placeholder')}
                     translate="no"
                   />
                   <ClientOnly>
@@ -152,49 +155,49 @@ export const BaseChat = React.forwardRef<HTMLDivElement, BaseChatProps>(
                   <div className="flex justify-between text-sm p-4 pt-2">
                     <div className="flex gap-1 items-center">
                       <IconButton
-                        title="Enhance prompt"
+                        title="Melhorar prompt"
                         disabled={input.length === 0 || enhancingPrompt}
                         className={classNames({
                           'opacity-100!': enhancingPrompt,
-                          'text-bolt-elements-item-contentAccent! pr-1.5 enabled:hover:bg-bolt-elements-item-backgroundAccent!':
+                          'text-vibr-elements-item-contentAccent! pr-1.5 enabled:hover:bg-vibr-elements-item-backgroundAccent!':
                             promptEnhanced,
                         })}
                         onClick={() => enhancePrompt?.()}
                       >
                         {enhancingPrompt ? (
                           <>
-                            <div className="i-svg-spinners:90-ring-with-bg text-bolt-elements-loader-progress text-xl"></div>
-                            <div className="ml-1.5">Enhancing prompt...</div>
+                            <div className="i-svg-spinners:90-ring-with-bg text-vibr-elements-loader-progress text-xl"></div>
+                            <div className="ml-1.5">Melhorando prompt...</div>
                           </>
                         ) : (
                           <>
-                            <div className="i-bolt:stars text-xl"></div>
-                            {promptEnhanced && <div className="ml-1.5">Prompt enhanced</div>}
+                            <div className="i-vibr:stars text-xl"></div>
+                            {promptEnhanced && <div className="ml-1.5">Prompt melhorado</div>}
                           </>
                         )}
                       </IconButton>
                     </div>
                     {input.length > 3 ? (
-                      <div className="text-xs text-bolt-elements-textTertiary">
-                        Use <kbd className="kdb">Shift</kbd> + <kbd className="kdb">Return</kbd> for a new line
+                      <div className="text-xs text-vibr-elements-textTertiary">
+                        Use <kbd className="kdb">Shift</kbd> + <kbd className="kdb">Enter</kbd> para nova linha
                       </div>
                     ) : null}
                   </div>
                 </div>
-                <div className="bg-bolt-elements-background-depth-1 pb-6">{/* Ghost Element */}</div>
+                <div className="bg-vibr-elements-background-depth-1 pb-6">{/* Ghost Element */}</div>
               </div>
             </div>
             {!chatStarted && (
               <div id="examples" className="relative w-full max-w-xl mx-auto mt-8 flex justify-center">
                 <div className="flex flex-col space-y-2 [mask-image:linear-gradient(to_bottom,black_0%,transparent_180%)] hover:[mask-image:none]">
-                  {EXAMPLE_PROMPTS.map((examplePrompt, index) => {
+                  {EXAMPLE_PROMPTS_PT.map((examplePrompt, index) => {
                     return (
                       <button
                         key={index}
                         onClick={(event) => {
                           sendMessage?.(event, examplePrompt.text);
                         }}
-                        className="group flex items-center w-full gap-2 justify-center bg-transparent text-bolt-elements-textTertiary hover:text-bolt-elements-textPrimary transition-theme"
+                        className="group flex items-center w-full gap-2 justify-center bg-transparent text-vibr-elements-textTertiary hover:text-vibr-elements-textPrimary transition-theme"
                       >
                         {examplePrompt.text}
                         <div className="i-ph:arrow-bend-down-left" />

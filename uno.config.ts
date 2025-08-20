@@ -5,7 +5,7 @@ import { defineConfig, presetIcons, presetUno, transformerDirectives } from 'uno
 
 const iconPaths = globSync('./icons/*.svg');
 
-const collectionName = 'bolt';
+const collectionName = 'vibr';
 
 const customIconCollection = iconPaths.reduce(
   (acc, iconPath) => {
@@ -34,18 +34,33 @@ const BASE_COLORS = {
     900: '#171717',
     950: '#0A0A0A',
   },
+  // Paleta ViBR - Azul royal + Verde-limão (segundo uniforme seleção)
   accent: {
-    50: '#EEF9FF',
-    100: '#D8F1FF',
-    200: '#BAE7FF',
-    300: '#8ADAFF',
-    400: '#53C4FF',
-    500: '#2BA6FF',
-    600: '#1488FC',
-    700: '#0D6FE8',
-    800: '#1259BB',
-    900: '#154E93',
-    950: '#122F59',
+    50: '#e6f3ff',
+    100: '#b3d9ff',
+    200: '#80bfff',
+    300: '#4da6ff',
+    400: '#1a8cff',
+    500: '#0066cc',  // Azul royal principal
+    600: '#0059b3',
+    700: '#004d99',
+    800: '#004080',
+    900: '#003366',
+    950: '#003d7a',  // Azul escuro (sombras)
+  },
+  // Verde-limão da CBF
+  vibr: {
+    50: '#f7fef0',
+    100: '#e8fcd3',
+    200: '#d4f9a7',
+    300: '#bef470',
+    400: '#a8ee43',
+    500: '#7ed321',  // Verde-limão principal
+    600: '#6bc41a',
+    700: '#58a615',
+    800: '#478812',
+    900: '#3a6f10',
+    950: '#1f3d09',
   },
   green: {
     50: '#F0FDF4',
@@ -99,9 +114,9 @@ const COLOR_PRIMITIVES = {
 
 export default defineConfig({
   shortcuts: {
-    'bolt-ease-cubic-bezier': 'ease-[cubic-bezier(0.4,0,0.2,1)]',
-    'transition-theme': 'transition-[background-color,border-color,color] duration-150 bolt-ease-cubic-bezier',
-    kdb: 'bg-bolt-elements-code-background text-bolt-elements-code-text py-1 px-1.5 rounded-md',
+    'vibr-ease-cubic-bezier': 'ease-[cubic-bezier(0.4,0,0.2,1)]',
+    'transition-theme': 'transition-[background-color,border-color,color] duration-150 vibr-ease-cubic-bezier',
+    kdb: 'bg-vibr-elements-code-background text-vibr-elements-code-text py-1 px-1.5 rounded-md',
     'max-w-chat': 'max-w-[var(--chat-max-width)]',
   },
   rules: [
@@ -114,115 +129,115 @@ export default defineConfig({
   theme: {
     colors: {
       ...COLOR_PRIMITIVES,
-      bolt: {
+      vibr: {
         elements: {
-          borderColor: 'var(--bolt-elements-borderColor)',
-          borderColorActive: 'var(--bolt-elements-borderColorActive)',
+          borderColor: 'var(--vibr-elements-borderColor)',
+          borderColorActive: 'var(--vibr-elements-borderColorActive)',
           background: {
             depth: {
-              1: 'var(--bolt-elements-bg-depth-1)',
-              2: 'var(--bolt-elements-bg-depth-2)',
-              3: 'var(--bolt-elements-bg-depth-3)',
-              4: 'var(--bolt-elements-bg-depth-4)',
+              1: 'var(--vibr-elements-bg-depth-1)',
+              2: 'var(--vibr-elements-bg-depth-2)',
+              3: 'var(--vibr-elements-bg-depth-3)',
+              4: 'var(--vibr-elements-bg-depth-4)',
             },
           },
-          textPrimary: 'var(--bolt-elements-textPrimary)',
-          textSecondary: 'var(--bolt-elements-textSecondary)',
-          textTertiary: 'var(--bolt-elements-textTertiary)',
+          textPrimary: 'var(--vibr-elements-textPrimary)',
+          textSecondary: 'var(--vibr-elements-textSecondary)',
+          textTertiary: 'var(--vibr-elements-textTertiary)',
           code: {
-            background: 'var(--bolt-elements-code-background)',
-            text: 'var(--bolt-elements-code-text)',
+            background: 'var(--vibr-elements-code-background)',
+            text: 'var(--vibr-elements-code-text)',
           },
           button: {
             primary: {
-              background: 'var(--bolt-elements-button-primary-background)',
-              backgroundHover: 'var(--bolt-elements-button-primary-backgroundHover)',
-              text: 'var(--bolt-elements-button-primary-text)',
+              background: 'var(--vibr-elements-button-primary-background)',
+              backgroundHover: 'var(--vibr-elements-button-primary-backgroundHover)',
+              text: 'var(--vibr-elements-button-primary-text)',
             },
             secondary: {
-              background: 'var(--bolt-elements-button-secondary-background)',
-              backgroundHover: 'var(--bolt-elements-button-secondary-backgroundHover)',
-              text: 'var(--bolt-elements-button-secondary-text)',
+              background: 'var(--vibr-elements-button-secondary-background)',
+              backgroundHover: 'var(--vibr-elements-button-secondary-backgroundHover)',
+              text: 'var(--vibr-elements-button-secondary-text)',
             },
             danger: {
-              background: 'var(--bolt-elements-button-danger-background)',
-              backgroundHover: 'var(--bolt-elements-button-danger-backgroundHover)',
-              text: 'var(--bolt-elements-button-danger-text)',
+              background: 'var(--vibr-elements-button-danger-background)',
+              backgroundHover: 'var(--vibr-elements-button-danger-backgroundHover)',
+              text: 'var(--vibr-elements-button-danger-text)',
             },
           },
           item: {
-            contentDefault: 'var(--bolt-elements-item-contentDefault)',
-            contentActive: 'var(--bolt-elements-item-contentActive)',
-            contentAccent: 'var(--bolt-elements-item-contentAccent)',
-            contentDanger: 'var(--bolt-elements-item-contentDanger)',
-            backgroundDefault: 'var(--bolt-elements-item-backgroundDefault)',
-            backgroundActive: 'var(--bolt-elements-item-backgroundActive)',
-            backgroundAccent: 'var(--bolt-elements-item-backgroundAccent)',
-            backgroundDanger: 'var(--bolt-elements-item-backgroundDanger)',
+            contentDefault: 'var(--vibr-elements-item-contentDefault)',
+            contentActive: 'var(--vibr-elements-item-contentActive)',
+            contentAccent: 'var(--vibr-elements-item-contentAccent)',
+            contentDanger: 'var(--vibr-elements-item-contentDanger)',
+            backgroundDefault: 'var(--vibr-elements-item-backgroundDefault)',
+            backgroundActive: 'var(--vibr-elements-item-backgroundActive)',
+            backgroundAccent: 'var(--vibr-elements-item-backgroundAccent)',
+            backgroundDanger: 'var(--vibr-elements-item-backgroundDanger)',
           },
           actions: {
-            background: 'var(--bolt-elements-actions-background)',
+            background: 'var(--vibr-elements-actions-background)',
             code: {
-              background: 'var(--bolt-elements-actions-code-background)',
+              background: 'var(--vibr-elements-actions-code-background)',
             },
           },
           artifacts: {
-            background: 'var(--bolt-elements-artifacts-background)',
-            backgroundHover: 'var(--bolt-elements-artifacts-backgroundHover)',
-            borderColor: 'var(--bolt-elements-artifacts-borderColor)',
+            background: 'var(--vibr-elements-artifacts-background)',
+            backgroundHover: 'var(--vibr-elements-artifacts-backgroundHover)',
+            borderColor: 'var(--vibr-elements-artifacts-borderColor)',
             inlineCode: {
-              background: 'var(--bolt-elements-artifacts-inlineCode-background)',
-              text: 'var(--bolt-elements-artifacts-inlineCode-text)',
+              background: 'var(--vibr-elements-artifacts-inlineCode-background)',
+              text: 'var(--vibr-elements-artifacts-inlineCode-text)',
             },
           },
           messages: {
-            background: 'var(--bolt-elements-messages-background)',
-            linkColor: 'var(--bolt-elements-messages-linkColor)',
+            background: 'var(--vibr-elements-messages-background)',
+            linkColor: 'var(--vibr-elements-messages-linkColor)',
             code: {
-              background: 'var(--bolt-elements-messages-code-background)',
+              background: 'var(--vibr-elements-messages-code-background)',
             },
             inlineCode: {
-              background: 'var(--bolt-elements-messages-inlineCode-background)',
-              text: 'var(--bolt-elements-messages-inlineCode-text)',
+              background: 'var(--vibr-elements-messages-inlineCode-background)',
+              text: 'var(--vibr-elements-messages-inlineCode-text)',
             },
           },
           icon: {
-            success: 'var(--bolt-elements-icon-success)',
-            error: 'var(--bolt-elements-icon-error)',
-            primary: 'var(--bolt-elements-icon-primary)',
-            secondary: 'var(--bolt-elements-icon-secondary)',
-            tertiary: 'var(--bolt-elements-icon-tertiary)',
+            success: 'var(--vibr-elements-icon-success)',
+            error: 'var(--vibr-elements-icon-error)',
+            primary: 'var(--vibr-elements-icon-primary)',
+            secondary: 'var(--vibr-elements-icon-secondary)',
+            tertiary: 'var(--vibr-elements-icon-tertiary)',
           },
           preview: {
             addressBar: {
-              background: 'var(--bolt-elements-preview-addressBar-background)',
-              backgroundHover: 'var(--bolt-elements-preview-addressBar-backgroundHover)',
-              backgroundActive: 'var(--bolt-elements-preview-addressBar-backgroundActive)',
-              text: 'var(--bolt-elements-preview-addressBar-text)',
-              textActive: 'var(--bolt-elements-preview-addressBar-textActive)',
+              background: 'var(--vibr-elements-preview-addressBar-background)',
+              backgroundHover: 'var(--vibr-elements-preview-addressBar-backgroundHover)',
+              backgroundActive: 'var(--vibr-elements-preview-addressBar-backgroundActive)',
+              text: 'var(--vibr-elements-preview-addressBar-text)',
+              textActive: 'var(--vibr-elements-preview-addressBar-textActive)',
             },
           },
           terminals: {
-            background: 'var(--bolt-elements-terminals-background)',
-            buttonBackground: 'var(--bolt-elements-terminals-buttonBackground)',
+            background: 'var(--vibr-elements-terminals-background)',
+            buttonBackground: 'var(--vibr-elements-terminals-buttonBackground)',
           },
-          dividerColor: 'var(--bolt-elements-dividerColor)',
+          dividerColor: 'var(--vibr-elements-dividerColor)',
           loader: {
-            background: 'var(--bolt-elements-loader-background)',
-            progress: 'var(--bolt-elements-loader-progress)',
+            background: 'var(--vibr-elements-loader-background)',
+            progress: 'var(--vibr-elements-loader-progress)',
           },
           prompt: {
-            background: 'var(--bolt-elements-prompt-background)',
+            background: 'var(--vibr-elements-prompt-background)',
           },
           sidebar: {
-            dropdownShadow: 'var(--bolt-elements-sidebar-dropdownShadow)',
-            buttonBackgroundDefault: 'var(--bolt-elements-sidebar-buttonBackgroundDefault)',
-            buttonBackgroundHover: 'var(--bolt-elements-sidebar-buttonBackgroundHover)',
-            buttonText: 'var(--bolt-elements-sidebar-buttonText)',
+            dropdownShadow: 'var(--vibr-elements-sidebar-dropdownShadow)',
+            buttonBackgroundDefault: 'var(--vibr-elements-sidebar-buttonBackgroundDefault)',
+            buttonBackgroundHover: 'var(--vibr-elements-sidebar-buttonBackgroundHover)',
+            buttonText: 'var(--vibr-elements-sidebar-buttonText)',
           },
           cta: {
-            background: 'var(--bolt-elements-cta-background)',
-            text: 'var(--bolt-elements-cta-text)',
+            background: 'var(--vibr-elements-cta-background)',
+            text: 'var(--vibr-elements-cta-text)',
           },
         },
       },

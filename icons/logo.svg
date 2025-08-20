@@ -1,4 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-  <rect width="16" height="16" rx="2" fill="#1389fd" />
-  <path d="M7.398 9.091h-3.58L10.364 2 8.602 6.909h3.58L5.636 14l1.762-4.909Z" fill="#fff" />
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <!-- Background com gradiente azul ViBR -->
+  <defs>
+    <linearGradient id="vibrGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#003d7a"/>
+      <stop offset="100%" stop-color="#0066cc"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Fundo com bordas arredondadas -->
+  <rect width="32" height="32" rx="6" fill="url(#vibrGradient)" />
+  
+  <!-- "Vi" em branco (destaque sobre o azul) -->
+  <text x="6" y="20" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#ffffff">Vi</text>
+  
+  <!-- "BR" em verde-limão -->
+  <text x="18" y="20" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#7ed321">BR</text>
+  
+  <!-- Elemento decorativo: pequeno código </> -->
+  <path d="M8 25 L6 27 L8 29" stroke="#7ed321" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  <path d="M24 25 L26 27 L24 29" stroke="#7ed321" stroke-width="1.5" fill="none" stroke-linecap="round"/>
 </svg>

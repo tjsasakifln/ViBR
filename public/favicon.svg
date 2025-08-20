@@ -1,4 +1,18 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-  <rect width="16" height="16" rx="2" fill="#1389fd" />
-  <path d="M7.398 9.091h-3.58L10.364 2 8.602 6.909h3.58L5.636 14l1.762-4.909Z" fill="#fff" />
+  <!-- Background com gradiente azul ViBR -->
+  <defs>
+    <linearGradient id="faviconGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#003d7a"/>
+      <stop offset="100%" stop-color="#0066cc"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Fundo -->
+  <rect width="16" height="16" rx="3" fill="url(#faviconGradient)" />
+  
+  <!-- "V" em branco -->
+  <path d="M3 4 L5 10 L7 4" stroke="#ffffff" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- "B" em verde-limão -->
+  <path d="M9 4 L9 10 M9 4 L11 4 L11 7 L9 7 M9 7 L11.5 7 L11.5 10 L9 10" stroke="#7ed321" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

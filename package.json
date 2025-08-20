@@ -1,6 +1,6 @@
 {
-  "name": "bolt",
-  "description": "StackBlitz AI Agent",
+  "name": "vibr",
+  "description": "ViBR - AI do Vibe Coder Brasileiro",
   "private": true,
   "license": "MIT",
   "packageManager": "pnpm@9.4.0",
