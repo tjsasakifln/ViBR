@@ -1,54 +1,218 @@
-[![Bolt.new: AI-Powered Full-Stack Web Development in the Browser](./public/social_preview_index.jpg)](https://bolt.new)
+# 🇧🇷 ViBR - AI do Vibe Coder Brasileiro
 
-# Bolt.new: AI-Powered Full-Stack Web Development in the Browser
+<div align="center">
+  <img src="./public/logo.svg" alt="ViBR Logo" width="120" height="120">
+  
+  **O primeiro assistente de IA que fala o português do desenvolvedor brasileiro**
+  
+  [![Licença](https://img.shields.io/badge/licença-MIT-blue.svg)](./LICENSE)
+  [![Status](https://img.shields.io/badge/status-em%20desenvolvimento-yellow.svg)]()
+  [![Versão](https://img.shields.io/badge/versão-1.0.0--beta-green.svg)]()
+</div>
 
-Bolt.new is an AI-powered web development agent that allows you to prompt, run, edit, and deploy full-stack applications directly from your browser—no local setup required. If you're here to build your own AI-powered web dev agent using the Bolt open source codebase, [click here to get started!](./CONTRIBUTING.md)
+---
 
-## What Makes Bolt.new Different
+## 🚀 O que é o ViBR?
 
-Claude, v0, etc are incredible- but you can't install packages, run backends or edit code. That’s where Bolt.new stands out:
+ViBR é uma plataforma brasileira de desenvolvimento assistido por IA que permite criar, editar e fazer deploy de aplicações full-stack **100% no navegador** - sem configuração local, sem complicação.
 
-- **Full-Stack in the Browser**: Bolt.new integrates cutting-edge AI models with an in-browser development environment powered by **StackBlitz’s WebContainers**. This allows you to:
-  - Install and run npm tools and libraries (like Vite, Next.js, and more)
-  - Run Node.js servers
-  - Interact with third-party APIs
-  - Deploy to production from chat
-  - Share your work via a URL
+### 🎯 Por que ViBR?
 
-- **AI with Environment Control**: Unlike traditional dev environments where the AI can only assist in code generation, Bolt.new gives AI models **complete control** over the entire  environment including the filesystem, node server, package manager, terminal, and browser console. This empowers AI agents to handle the entire app lifecycle—from creation to deployment.
+Porque outros assistentes de IA são incríveis, mas **faltava um que realmente entendesse o jeito brasileiro de programar**:
 
-Whether you’re an experienced developer, a PM or designer, Bolt.new allows you to build production-grade full-stack applications with ease.
+- 🇧🇷 **100% em Português Brasileiro** - Interface e IA que falam nossa língua
+- ⚡ **Funciona no Navegador** - Powered by WebContainers (StackBlitz)
+- 💰 **Preços em Real** - Sem surpresas com câmbio ou cartão internacional
+- 🤝 **Suporte Brasileiro** - Time que entende nossas necessidades
+- 🛠️ **Deploy Automático** - Do código à produção em 1 clique
 
-For developers interested in building their own AI-powered development tools with WebContainers, check out the open-source Bolt codebase in this repo!
+---
 
-## Tips and Tricks
+## ✨ Funcionalidades
 
-Here are some tips to get the most out of Bolt.new:
+### 🎨 **Desenvolvimento Completo**
+- **Frontend + Backend + Banco** - Projetos full-stack completos
+- **Frameworks Populares** - React, Next.js, Node.js, Python e mais
+- **Deploy Automático** - Integração com Vercel, Netlify e outros
+- **Terminal Integrado** - Execute comandos direto no navegador
 
-- **Be specific about your stack**: If you want to use specific frameworks or libraries (like Astro, Tailwind, ShadCN, or any other popular JavaScript framework), mention them in your initial prompt to ensure Bolt scaffolds the project accordingly.
+### 🤖 **IA Brasileira**
+- **Prompts em Português** - Descreva seu projeto naturalmente
+- **Contexto Nacional** - Exemplos com CPF, CEP, moedas em R$
+- **Boas Práticas BR** - Sugestões de hospedagem e ferramentas nacionais
+- **Linguagem Coloquial** - IA que fala "beleza", "massa", "show"
 
-- **Use the enhance prompt icon**: Before sending your prompt, try clicking the 'enhance' icon to have the AI model help you refine your prompt, then edit the results before submitting.
+### 💼 **Para Devs Brasileiros**
+- **Freelancers** - Acelere a criação de projetos para clientes
+- **Startups** - MVP rápido e profissional
+- **Estudantes** - Aprenda fazendo projetos reais
+- **Agências** - Prototipagem rápida e apresentações
 
-- **Scaffold the basics first, then add features**: Make sure the basic structure of your application is in place before diving into more advanced functionality. This helps Bolt understand the foundation of your project and ensure everything is wired up right before building out more advanced functionality.
+---
 
-- **Batch simple instructions**: Save time by combining simple instructions into one message. For example, you can ask Bolt to change the color scheme, add mobile responsiveness, and restart the dev server, all in one go saving you time and reducing API credit consumption significantly.
+## 🛠️ Como Usar
 
-## FAQs
+### 1. **Acesse e Comece**
+```
+🌐 https://vibr.dev (em breve)
+📝 Descreva seu projeto em português
+⚡ ViBR cria tudo automaticamente
+```
 
-**Where do I sign up for a paid plan?**  
-Bolt.new is free to get started. If you need more AI tokens or want private projects, you can purchase a paid subscription in your [Bolt.new](https://bolt.new) settings, in the lower-left hand corner of the application. 
+### 2. **Exemplos de Prompts**
+```
+"Cria um e-commerce de roupas com carrinho e pagamento via PIX"
 
-**What happens if I hit the free usage limit?**  
-Once your free daily token limit is reached, AI interactions are paused until the next day or until you upgrade your plan.
+"Faz um dashboard para controlar vendas com gráficos em tempo real"
 
-**Is Bolt in beta?**  
-Yes, Bolt.new is in beta, and we are actively improving it based on feedback.
+"Desenvolve um app de delivery que calcule frete por CEP"
+```
 
-**How can I report Bolt.new issues?**  
-Check out the [Issues section](https://github.com/stackblitz/bolt.new/issues) to report an issue or request a new feature. Please use the search feature to check if someone else has already submitted the same issue/request.
+### 3. **Deploy Automático**
+```
+🚀 Um clique e seu app está no ar
+🔗 Link compartilhável na hora
+📱 Responsivo e otimizado
+```
 
-**What frameworks/libraries currently work on Bolt?**  
-Bolt.new supports most popular JavaScript frameworks and libraries. If it runs on StackBlitz, it will run on Bolt.new as well.
+---
 
-**How can I add make sure my framework/project works well in bolt?**  
-We are excited to work with the JavaScript ecosystem to improve functionality in Bolt. Reach out to us via [hello@stackblitz.com](mailto:hello@stackblitz.com) to discuss how we can partner!
+## 💰 Planos
+
+### 🆓 **Gratuito**
+- 50 interações com IA/mês
+- Projetos públicos
+- Suporte via comunidade
+- **R$ 0/mês**
+
+### ⭐ **Pro**
+- 1000 interações/mês
+- Projetos privados
+- Suporte prioritário
+- API key própria
+- **R$ 29,90/mês**
+
+### 🏢 **Business**
+- Interações ilimitadas
+- Colaboração em equipe
+- SLA 99.9%
+- Whitelabel option
+- **R$ 89,90/mês**
+
+---
+
+## 🎯 Roadmap
+
+### ✅ **Fase 1 - MVP (6-8 semanas)**
+- [x] Fork e auditoria do código base Bolt
+- [x] Plano estratégico completo
+- [ ] Rebranding para identidade ViBR
+- [ ] Localização 100% português brasileiro
+- [ ] Sistema de autenticação e billing
+
+### 🔄 **Fase 2 - Lançamento**
+- [ ] Deploy em produção
+- [ ] Landing page brasileira
+- [ ] Soft launch com 100 early adopters
+- [ ] Onboarding de usuários
+
+### 🚀 **Fase 3 - Crescimento**
+- [ ] Integração com ferramentas brasileiras
+- [ ] Features de colaboração
+- [ ] Marketplace de templates
+- [ ] API pública para desenvolvedores
+
+---
+
+## 🏗️ Para Desenvolvedores
+
+### **Stack Tecnológico**
+```typescript
+Frontend: Remix + TypeScript + UnoCSS
+Backend: Cloudflare Workers + Anthropic AI
+Database: Supabase
+Auth: Clerk.dev  
+Payments: Stripe Brasil
+Deploy: Vercel
+Containers: WebContainer API (StackBlitz)
+```
+
+### **Executar Localmente**
+```bash
+# Clone o repositório
+git clone https://github.com/tjsasakifln/ViBR.git
+
+# Instale dependências
+npm install
+
+# Configure variáveis de ambiente
+cp .env.example .env.local
+# Adicione sua ANTHROPIC_API_KEY
+
+# Execute em desenvolvimento
+npm run dev
+```
+
+### **Contribuir**
+1. 🍴 Fork o projeto
+2. 🌟 Crie uma branch para sua feature
+3. 💻 Faça suas mudanças
+4. 🧪 Teste tudo
+5. 📤 Abra um Pull Request
+
+Leia nosso [Guia de Contribuição](./CONTRIBUTING.md) para mais detalhes.
+
+---
+
+## 📚 Documentação
+
+- 📋 **[Plano Estratégico](./PLANO_VIBR.md)** - Roadmap completo do projeto
+- 🔍 **[Auditoria Técnica](./RELATORIO_AUDITORIA_VIBR.md)** - Análise detalhada do código
+- 🤝 **[Como Contribuir](./CONTRIBUTING.md)** - Guia para desenvolvedores
+- ⚖️ **[Licença](./LICENSE)** - MIT License
+
+---
+
+## 🤝 Comunidade
+
+### **Onde Nos Encontrar**
+- 💬 **Discord**: [ViBR Devs](# Em breve)
+- 📱 **Telegram**: [@vibr_devs](# Em breve) 
+- 🐦 **Twitter**: [@vibr_dev](# Em breve)
+- 💼 **LinkedIn**: [ViBR](# Em breve)
+
+### **Suporte**
+- 📧 **Email**: suporte@vibr.dev
+- 🐛 **Bugs**: [Issues no GitHub](./issues)
+- 💡 **Sugestões**: [Discussions](./discussions)
+
+---
+
+## 🎉 Apoiadores
+
+ViBR é possível graças a:
+
+- 🏗️ **[StackBlitz](https://stackblitz.com)** - WebContainer technology
+- 🤖 **[Anthropic](https://anthropic.com)** - Claude AI models  
+- ⚡ **[Remix](https://remix.run)** - Full-stack framework
+- 🎨 **[UnoCSS](https://unocss.dev)** - Atomic CSS engine
+
+---
+
+## ⚖️ Licença
+
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](./LICENSE) para mais detalhes.
+
+---
+
+## 🇧🇷 Feito com ❤️ no Brasil
+
+> *"Transformando o jeito que os brasileiros criam software"*
+
+**ViBR** - Onde a IA fala português e o código vira realidade! ⚡
+
+---
+
+<div align="center">
+  <sub>Built with ❤️ by Brazilian developers, for Brazilian developers</sub>
+</div>
