@@ -4,6 +4,7 @@ import { chatStore } from '~/lib/stores/chat';
 import { classNames } from '~/utils/classNames';
 import { HeaderActionButtons } from './HeaderActionButtons.client';
 import { ChatDescription } from '~/lib/persistence/ChatDescription.client';
+import { UserMenu } from '~/components/auth/UserMenu.client';
 import { useTranslation } from '~/utils/i18n';
 
 export function Header() {
@@ -29,15 +30,20 @@ export function Header() {
       <span className="flex-1 px-4 truncate text-center text-vibr-elements-textPrimary">
         <ClientOnly>{() => <ChatDescription />}</ClientOnly>
       </span>
-      {chat.started && (
+      <div className="flex items-center gap-4">
+        {chat.started && (
+          <ClientOnly>
+            {() => (
+              <div className="mr-1">
+                <HeaderActionButtons />
+              </div>
+            )}
+          </ClientOnly>
+        )}
         <ClientOnly>
-          {() => (
-            <div className="mr-1">
-              <HeaderActionButtons />
-            </div>
-          )}
+          {() => <UserMenu />}
         </ClientOnly>
-      )}
+      </div>
     </header>
   );
 }

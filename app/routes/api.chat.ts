@@ -3,12 +3,40 @@ import { MAX_RESPONSE_SEGMENTS, MAX_TOKENS } from '~/lib/.server/llm/constants';
 import { CONTINUE_PROMPT } from '~/lib/.server/llm/prompts';
 import { streamText, type Messages, type StreamingOptions } from '~/lib/.server/llm/stream-text';
 import SwitchableStream from '~/lib/.server/llm/switchable-stream';
+import { AuthService } from '~/lib/auth/auth.server';
+import { requireUsageLimit, consumeCredit, UsageLimitError } from '~/lib/billing/limits';
 
 export async function action(args: ActionFunctionArgs) {
   return chatAction(args);
 }
 
 async function chatAction({ context, request }: ActionFunctionArgs) {
+  // Verificar autenticação
+  const user = await AuthService.getUser(request);
+  if (!user) {
+    return new Response(JSON.stringify({ error: 'Não autorizado' }), {
+      status: 401,
+      headers: { 'Content-Type': 'application/json' },
+    });
+  }
+
+  // Verificar limites de uso
+  try {
+    await requireUsageLimit(user);
+  } catch (error) {
+    if (error instanceof UsageLimitError) {
+      return new Response(JSON.stringify({ 
+        error: error.message,
+        upgradeRequired: error.upgradeRequired,
+        type: 'usage_limit_exceeded'
+      }), {
+        status: 429, // Too Many Requests
+        headers: { 'Content-Type': 'application/json' },
+      });
+    }
+    throw error;
+  }
+
   const { messages } = await request.json<{ messages: Messages }>();
 
   const stream = new SwitchableStream();
@@ -17,6 +45,9 @@ async function chatAction({ context, request }: ActionFunctionArgs) {
     const options: StreamingOptions = {
       toolChoice: 'none',
       onFinish: async ({ text: content, finishReason }) => {
+        // Consumir crédito após resposta bem-sucedida
+        await consumeCredit(user, 1);
+        
         if (finishReason !== 'length') {
           return stream.close();
         }
