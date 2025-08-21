@@ -16,7 +16,19 @@
       "Bash(git push:*)",
       "Bash(pnpm run:*)",
       "Bash(tsc --noEmit)",
-      "Bash(pnpm add:*)"
+      "Bash(pnpm add:*)",
+      "mcp__gemini-cli__ask-gemini",
+      "mcp__gemini-cli__ping",
+      "WebFetch(domain:github.com)",
+      "Bash(claude mcp:*)",
+      "mcp__gemini-cli__Help",
+      "Bash(powershell.exe:*)",
+      "Bash(set PATH=%PATH%)",
+      "Bash(D:ViBR)",
+      "Bash(where gemini)",
+      "WebSearch",
+      "Bash(gemini mcp:*)",
+      "Bash(gemini:*)"
     ],
     "deny": [],
     "ask": []

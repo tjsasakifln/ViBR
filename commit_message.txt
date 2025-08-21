@@ -1,1 +1,1 @@
-feat: implement Clerk for authentication and refactor translations
+fix: remove dead links and references to bolt
