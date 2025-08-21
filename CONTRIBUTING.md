@@ -1,4 +1,4 @@
-[![ViBR - AI do Vibe Coder Brasileiro](./public/social_preview_index.jpg)](https://vibr.dev)
+[![ViBR - AI do Vibe Coder Brasileiro](./public/social_preview_index.jpg)]()
 
 > Bem-vindo à base de código da **ViBR**! Este repositório contém a primeira assistente de IA para desenvolvimento de software **100% em português brasileiro**, construída para a comunidade dev brasileira.
 

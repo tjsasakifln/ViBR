@@ -54,7 +54,7 @@ Porque outros assistentes de IA são incríveis, mas **faltava um que realmente 
 
 ### 1. **Acesse e Comece**
 ```
-🌐 https://vibr.dev (em breve)
+🌐 ViBR (em breve)
 📝 Descreva seu projeto em português
 ⚡ ViBR cria tudo automaticamente
 ```
