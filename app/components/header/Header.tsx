@@ -4,7 +4,7 @@ import { chatStore } from '~/lib/stores/chat';
 import { classNames } from '~/utils/classNames';
 import { HeaderActionButtons } from './HeaderActionButtons.client';
 import { ChatDescription } from '~/lib/persistence/ChatDescription.client';
-import { UserMenu } from '~/components/auth/UserMenu.client';
+import { SignedIn, SignedOut, UserButton } from '@clerk/remix';
 import { useTranslation } from '~/utils/i18n';
 
 export function Header() {
@@ -40,9 +40,12 @@ export function Header() {
             )}
           </ClientOnly>
         )}
-        <ClientOnly>
-          {() => <UserMenu />}
-        </ClientOnly>
+        <SignedIn>
+          <UserButton afterSignOutUrl="/" />
+        </SignedIn>
+        <SignedOut>
+          <a href="/auth/signin">Login</a>
+        </SignedOut>
       </div>
     </header>
   );

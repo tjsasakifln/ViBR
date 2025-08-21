@@ -38,6 +38,8 @@ export const pt_BR = {
   "editor.save": "Salvar",
   "editor.run": "Executar",
   "editor.stop": "Parar",
+  "editor.files": "Arquivos",
+  "editor.reset": "Redefinir",
   
   // Workbench
   "workbench.no_project": "Nenhum projeto aberto",
