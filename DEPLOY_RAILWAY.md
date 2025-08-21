@@ -11,9 +11,15 @@
 ### 1. Preparação (já configurado)
 - ✅ `@remix-run/serve` instalado
 - ✅ Script `start` configurado para Node.js
-- ✅ `railway.json` otimizado
+- ✅ `railway.json` configurado para usar Dockerfile
 - ✅ Health check endpoint `/healthz`
 - ✅ Dockerfile com segurança melhorada
+
+#### Opções de Builder:
+- **Dockerfile** (padrão): Usa configurações customizadas de segurança
+- **Nixpacks** (alternativo): Detecção automática, mais simples
+
+Para usar Nixpacks, substitua `railway.json` por `railway.nixpacks.json`
 
 ### 2. Configuração Railway
 
